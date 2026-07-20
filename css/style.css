@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-bg: #000000;
+    --color-primary: #304878;
+    --color-secondary: #7890a8;
+    --color-secondary-brillant: #b7dbff;
+    --color-dark: #181848;
+    --color-accent: #f0a818;
+    --color-accent-ligth: #ffce6d;
+    --color-accent-ligth100: #ffefce;
+    --color-accent-dark: #4a3308;
+    --color-aux: #0b8185;
+    --color-aux1: #1f5f61;
+
+    --color-dark-bb: #181848bb;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+html, body {
+    background-color: #202021;
+    margin: 0;
+}
+
+
+.container-global {
+    background-color: #202021;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+
+    display: flex;          /* 💡 CLAVE: Volvemos a Flexbox */
+    flex-direction: row;    /* Sidebar al lado del Main */
+}
+
+/*  Header Section ===================================================================*/
+
+.header {
+    height: 60px;
+    padding: 0 8px;
+    min-width: 100%;
+    background-color: #0b8185;
+
+    position: fixed;
+    z-index: 50;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand {
+    /*margin: auto;*/
+    overflow: hidden;
+
+    flex: 0 0 210px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;  /* Centra verticalmente botón y logo */
+    box-sizing: border-box;
+}
+
+.menu-toggle--header {
+    padding: 0 5px;
+    background: transparent;
+    color: #eee;  
+    border: none;
+    font-size: 1.3rem;
+    
+    cursor: pointer;
+}
+
+.logo-link--header {
+    width: 181px;
+    color: #eee;       /* Para que el texto "Inicio" no se vea azul */
+    font-size: 1.55rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.logo-link--header img {
+    object-fit: cover;
+    height: 48px;         /* Tamaño del logo */
+    max-width: 48px;
+}
+
+.header__search-bar {
+    height: clamp(20px, 100%, 30px);
+    overflow: hidden;
+
+    padding: 0 15px;
+    margin-left: 15px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    
+
+    flex: 0 1 732px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.header__container-perfil {
+    height: fit-content;
+
+    flex: 0 0 225px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+}
+
+/*  Sidebar Section ===================================================================*/
+
+.sidebar {
+    position: fixed; /* Se queda fijo mientras haces scroll en el contenido */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* <--- CLAVE: Si el contenido crece, aparece scroll interno */
+    /*flex-shrink: 0;    Evita que el sidebar se aplaste cuando el main crezca */
+    z-index: 80;        /* Lo pone por encima del párrafo */
+
+    background-color: #1f5f61;
+    color: #eee;
+    box-shadow: 0 0 10px 10px #222;
+
+    height: 100vh;    /* Su altura es la de la pantalla */
+    max-width: 300px;
+    min-width: 270px;
+    flex: 1; /* Estructura: clamp(mínimo, ideal, máximo) */
+    overflow: hidden; /* Evita que el texto se salga al encogerse */
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro semi-transparente */
+    backdrop-filter: blur(2px);            /* Opcional: un toque de desenfoque */
+    z-index: 70;                           /* Menor que el z-index del sidebar (80) */
+    display: none;                         /* Oculto por defecto */
+}
+
+/* Cuando el sidebar NO está colapsado, mostramos el overlay */
+.sidebar-overlay.is-active {
+    display: block;
+}
+
+.menu-toggle--aux{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: transparent;
+    color: #1a1a1a;
+    font-size: 2rem;
+    z-index: 20;
+
+    /* --- NUEVO: Para centrar el círculo --- */
+    border: none;
+    cursor: pointer;
+    width: 3.2rem;   /* Ancho del área del botón */
+    height: 3.2rem;  /* Alto del área del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ------------------------------------- */
+}
+
+    .menu-toggle--aux::before {
+        content: ''; /* Obligatorio para que exista */
+        position: absolute;
+        width: 100%;  /* Ocupa todo el ancho del botón */
+        height: 100%; /* Ocupa todo el alto del botón */
+        background-color: #eee; /* El color oscuro que querías */
+        border-radius: 50%; /* <--- ESTO CREA EL CÍRCULO */
+        z-index: -1; /* Lo pone detrás del icono */
+        transition: background-color 0.3s ease; /* Para el hover */
+    }
+
+    .menu-toggle--aux:hover::before {
+        background-color: #eeec; /* Aclara el círculo al pasar el mouse */
+    }
+
+    .is-visible {
+        display: none;
+    }
+
+    /* DINAMISMO JS ===============================================================*/
+
+    /* Estado Encogido (Colapsado) */
+    .sidebar.is-collapsed {
+        display: none; 
+    }
+
+.sidebar__brand {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  /* Centra verticalmente botón y logo */
+
+    margin: auto;
+    margin-top: 20px;
+    height: 64px;
+    max-width: 85%;
+    gap: 0px;            /* Espacio entre el botón y el logo */
+    height: 56px;
+    box-sizing: border-box;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: #eee;          /* O blanco si tu fondo es oscuro */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+
+    font-size: 2rem;
+    text-decoration: none;
+    color: inherit;       /* Para que el texto "Inicio" no se vea azul */
+    font-weight: bold;
+    gap: 2px;
+}
+
+.logo-link img {
+    object-fit: cover;
+    height: 48px;         /* Tamaño del logo */
+    max-width: 48px;
+}
+
+.sidebar__divider {
+    border: 0;               /* Quitamos el borde por defecto */
+    height: 1px;             /* Grosor mínimo */
+    background-color: rgba(255, 255, 255, 0.1); /* Color sutil (blanco con transparencia) */
+    margin: auto;
+    margin-top: 10px;         /* Espaciado arriba y abajo */
+    width: 90%;              /* Un toque elegante: que no toque los bordes */
+}
+
+    .sidebar__divider--gradient {
+        border: 0;
+        height: 1.5px;
+        background: linear-gradient(to right, transparent 0%, #fff2 45%, #fff2 55%, transparent 100%);
+    }
+
+.sidebar__nav-side {
+    max-width: 85%;
+    margin: auto;
+    margin-top: 30px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.nav-side__list-tools {
+    list-style: none; /* Esto elimina el punto por completo */
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+
+.list-item__link {
+    margin: 0 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+    .list-item__link:hover {
+        background-color: #eee2;
+        border-radius: 12px;
+    }
+
+.container-icon {
+    height: 31px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 31px;
+}
+
+.icon-nav {
+    color: #F0F8FF;
+    font-size: 1.2rem;
+}
+
+.link-text {
+    color: #F0F8FF;
+    align-self: center;
+    font-size: 1.2rem;
+    text-align: left;
+    vertical-align: center;
+    min-width: 150px;
+}
+
+/*  Sidebar Section end ===================================================================*/
+
+.main-content {
+    min-width: 0;      /* Ya lo tenías, mantenlo, es vital para Flexbox */
+    width: 100%;       /* Asegura que intente llenar el espacio */ 
+    padding: 80px 50px 20px 50px; /* Un poco de respiro para el contenido */
+    color: #ddd;
+    background-color: #202021;
+
+    flex: 1;
+    
+    display: flex;
+    flex-flow: column nowrap; /* Cambiado de row (default) a column para el contenido */
+    justify-content: center;
+    align-items: center; 
+
+    container-type: inline-size;
+    container-name: main;
+}
+
+
+
+.is-collapsed{
+    display: none;
+}
+
+.red {
+    background-color: #f00;
+}
+
+
+
+

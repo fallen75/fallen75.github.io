@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleHorario.css">
+    <link rel="stylesheet" href="../css/styleHorario1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Horario - Alpaquels_v1.0</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__brand">
+            <button class="menu-toggle--header"> <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="logo-link--header" title="Ir al inicio de Alpaquels">
+                <img src="../resources/alpatechLogo.png" alt="Inicio">
+                <span>Alpaquels</span>
+            </a>
+        </div>
+        <div class="header__search-bar">
+            Barra de Busqueda - Horario
+        </div>
+        <div class="header__container-perfil">
+            Perfil
+        </div>
+
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar is-visible">
+        <div class="sidebar__brand">
+            <button class="menu-toggle"> <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="logo-link" title="Ir al inicio de YouTube">
+                <img src="../resources/alpatechLogo.png" alt="Inicio">
+                Alpaquels
+            </a>
+        </div>
+
+        <hr class="sidebar__divider sidebar__divider--gradient">
+
+        <nav class="sidebar__nav-side" aria-label="Navegación lateral">
+            <ul class="nav-side__list-tools">
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="../index.html">
+                        <div class="container-icon">
+                            <i class="icon-nav fa-solid fa-house"></i>
+                        </div>
+                        <span class="link-text">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="./horario.html">
+                        <div class="container-icon">    
+                            <i class="icon-nav fa-solid fa-calendar"></i>
+                        </div>
+                        <span class="link-text">Horario</span>
+                    </a>
+                </li>
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="./calculadora.html">
+                        <div class="container-icon">
+                            <i class="icon-nav fa-solid fa-calculator"></i>
+                        </div>
+                        <span class="link-text">Calculadora</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-global">
+        
+        <main class="schedule-container">
+            <h1 class="title">Visualizador de Horarios</h1>
+            <div class="grid-header">
+                <div class="corner">Hora</div>
+                <div>Lunes</div><div>Martes</div><div>Miércoles</div><div>Jueves</div><div>Viernes</div><div>Sábado</div>
+            </div>
+            <div class="schedule-grid-body" id="horario-grid">
+                <div class="grid-body__corner">
+                    <div>8:00</div><div>8:50</div>
+                    <div>9:40</div><div>10:30</div>
+                    <div>11:20</div><div>12:10</div>
+                    <div>1:00</div><div>1:50</div>
+                    <div>2:40</div><div>3:30</div>
+                    <div>4:20</div><div>5:10</div>
+                    <div>6:00</div><div>6:50</div>
+                </div>
+                <div class="day monday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+                <div class="day tuesday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+                <div class="day wednesday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+                <div class="day thursday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+                <div class="day friday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+                <div class="day saturday">
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                    <div></div><div></div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="sidebar-header">
+                <h2>Mis Cursos</h2>
+                <button id="btn-open-modal" class="btn-add-plus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <hr class="sidebar__divider">
+
+            <ul id="lista-cursos">
+                
+            </ul>
+        </aside>
+    </div>
+
+    <div id="modal-curso" class="modal">
+        <div class="modal-content">
+            <div class="modal-content__header">
+                <h2>Añadir Nuevo Curso</h2>
+                <span class="close-modal">
+                    <i class="fa-solid fa-x"></i>
+                </span>
+            </div>
+            <form id="curso-form">
+                <input type="text" id="nombre" placeholder="Nombre del curso" required>
+                <div class="row">
+                    <input type="text" id="aula" placeholder="Aula" required>
+                    <input type="text" id="docente" placeholder="Docente" required>
+                </div>
+                <label>Día</label>
+                <select id="dia">
+                    <option value="" disabled selected>Seleccione un día</option>
+                    <option value="0">Lunes</option><option value="1">Martes</option>
+                    <option value="2">Miércoles</option><option value="3">Jueves</option>
+                    <option value="4">Viernes</option><option value="5">Sábado</option>
+                </select>
+                <div class="row">
+                    <div>
+                        <label>Inicio (HH:mm)</label>
+                        <input type="text" id="inicio" placeholder="08:00" required>
+                    </div>
+                    <div>
+                        <label>Fin (HH:mm)</label>
+                        <input type="text" id="fin" placeholder="17:10" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Guardar Curso</button>
+            </form>
+        </div>
+    </div>
+
+    <template class="template__curso">
+        <li class="curso">
+            <strong class="curso__title"></strong>
+            <hr class="sidebar__divider">
+            <span class="curso__teachingAndClassroom"></span>
+            <span class="curso__schedule"></span>
+            <div class="curso_buttons">
+                <button class="btn-view">
+                    Ver
+                    <i class="fa-solid fa-eye"></i>
+                    <!--<i class="fa-solid fa-eye-slash"></i>-->
+                </button>
+                <button class="btn-delete">
+                    Borrar
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <template class="template__cursoCard">
+        <div class="cursoCard">
+            <span class="cursoCard__title"></span>
+            <hr class="sidebar__divider">
+            <span class="cursoCard__teaching"></span>
+            <span class="cursoCard__classroomAndSchedule"></span>
+        </div>
+    </template>
+
+    <!--<template class="template__cursoCard">
+        <div class="curso-block color-realidad">
+            <b>Realidad Nacional (S1)</b><br>
+            08:00-12:10<br>
+            B1-2<br>
+            <b>SALAZAR QUISPE, ROBERT</b>
+        </div>
+    </template>-->
+
+    <script src="../js/logica.js" type="module"></script>
+    <script src="../js/logicaHorario.js" type="module"></script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleCalculadora.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Calculadora - Alpaquels_v1.0</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__brand">
+            <button class="menu-toggle--header"> <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="logo-link--header" title="Ir al inicio de Alpaquels">
+                <img src="../resources/alpatechLogo.png" alt="Inicio">
+                <span>Alpaquels</span>
+            </a>
+        </div>
+        <div class="header__search-bar">
+            Barra de Busqueda - Calcualadora
+        </div>
+        <div class="header__container-perfil">
+            Perfil
+        </div>
+
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar is-visible">
+        <div class="sidebar__brand">
+            <button class="menu-toggle"> <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="logo-link" title="Ir al inicio de YouTube">
+                <img src="../resources/alpatechLogo.png" alt="Inicio">
+                Alpaquels
+            </a>
+        </div>
+
+        <hr class="sidebar__divider sidebar__divider--gradient">
+
+        <nav class="sidebar__nav-side" aria-label="Navegación lateral">
+            <ul class="nav-side__list-tools">
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="../index.html">
+                        <div class="container-icon">
+                            <i class="icon-nav fa-solid fa-house"></i>
+                        </div>
+                        <span class="link-text">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="./horario.html">
+                        <div class="container-icon">    
+                            <i class="icon-nav fa-solid fa-calendar"></i>
+                        </div>
+                        <span class="link-text">Horario</span>
+                    </a>
+                </li>
+
+                <li class="list-tools__list-item">
+                    <a class="list-item__link" href="./calculadora.html">
+                        <div class="container-icon">
+                            <i class="icon-nav fa-solid fa-calculator"></i>
+                        </div>
+                        <span class="link-text">Calculadora</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-global">
+        
+        <main class="main-content">
+            <form class="form-promedio">
+                <fieldset class="grades-student-EC">
+                    <legend>Notas de Evaluación de Capacidad</legend>
+                    
+                    <p>Introduce las calificaciones de las EC:</p>
+                    
+                    <div class="grade-student">
+                        <label for="capacity-assessment-1">Evaluación Capacidad 1:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink"
+                            id="capacity-assessment-1" 
+                            name="capacity-assessment-1" 
+                            min="0" max="20" 
+                            data-weight="0.1"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+                    <div class="grade-student">
+                        <label for="capacity-assessment-2">Evaluación Capacidad 2:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="capacity-assessment-2" 
+                            name="capacity-assessment-2" 
+                            min="0" max="20" 
+                            data-weight="0.1"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+                    <div class="grade-student">
+                        <label for="capacity-assessment-3">Evaluación Capacidad 3:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="capacity-assessment-3" 
+                            name="capacity-assessment-3" 
+                            min="0" max="20" 
+                            data-weight="0.1"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+                    <div class="grade-student">
+                        <label for="capacity-assessment-4">Evaluación Capacidad 4:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="capacity-assessment-4" 
+                            name="capacity-assessment-4" 
+                            min="0" max="20" 
+                            data-weight="0.1"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+
+                    <button id="clean-grade-EC" type="reset">Limpiar Campos</button>
+
+                </fieldset>
+
+                <fieldset class="grades-student-ExaTA">
+                    <legend>Notas de Examen y TA</legend>
+                    
+                    <p>Introduce las calificaciones de examen parcial, examen final y trabajo aplicativo:</p>
+
+                    <div class="field-group">
+                        <label for="ExamenParcial">Examen Parcial:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="ExamenParcial" 
+                            name="ExamenParcial" 
+                            min="0" max="20" 
+                            data-weight="0.2"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="ExamenFinal">Examen Final:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="ExamenFinal" 
+                            name="ExamenFinal" 
+                            min="0" max="20" 
+                            data-weight="0.2"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima" value="10.5">--</data>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="TrabajoAplicativo">Trabajo Aplicativo:</label>
+                        <input 
+                            type="number" 
+                            class="hover-blink" id="TrabajoAplicativo" 
+                            name="TrabajoAplicativo" 
+                            min="0" max="20" 
+                            data-weight="0.2"
+                            required 
+                            placeholder="0.0"
+                        >
+                        <data class="nota-minima">--</data>
+                    </div>
+                    <button id="clean-grade-ExaTA" type="reset">Limpiar Campos</button>
+
+                </fieldset>
+
+                <div class="result">
+                    <output class="result__output" for="nota1 nota2 nota3 nota4 nota5 nota6 nota7">
+                        El promedio es: <data id="nota-promedio">--</data>
+                    </output>
+                    <p class="result__nota">Nota: Los campos <data class="nota-minima--example">--</data> indican la nota mínima para aprobar</p>
+                </div>
+            </form>
+
+        </main>
+    </div>
+
+    <script src="../js/logica.js" type="module"></script>
+    <script src="../js/logicaCalculadora.js" type="module"></script>
+    
+</body>
+</html>

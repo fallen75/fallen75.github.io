@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Digital+Numbers&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+
+:root {
+    --color-bg: #000000;
+    --color-primary: #304878;
+    --color-secondary: #7890a8;
+    --color-secondary-brillant: #b7dbff;
+    --color-dark: #181848;
+    --color-accent: #f0a818;
+    --color-accent-ligth: #ffce6d;
+    --color-accent-ligth100: #ffefce;
+    --color-accent-dark: #4a3308;
+
+    --color-dark-bb: #181848bb;
+}
+
+.form-promedio {
+    width: 100%;
+    max-width: 1280px;
+    max-height: fit-content;
+    box-sizing: border-box;
+
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-auto-flow: row;
+    grid-auto-rows: min-content; /*minmax(auto, 1fr)*/
+    align-items: center;
+    gap: 30px 40px;
+
+    container-type: inline-size;
+    container-name: formulario;
+}
+
+.grades-student-EC,
+.grades-student-ExaTA,
+.result{
+    /*min-width: min-content;*/
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: top;
+    align-items: center;
+
+}
+
+.grades-student-EC {
+    background: var(--color-dark-bb);
+    border: 3px solid var(--color-secondary);
+    border-radius: 35px;
+    box-shadow: 7px 7px 21px 7px #0005;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.grades-student-EC legend {
+    margin: auto;
+    padding: 0 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-wrap: balance;
+}
+
+.grades-student-EC p {
+    margin: 0 35px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.grade-student {
+    width: 80%;
+    margin-top: 10px;
+
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    padding: 8px 16px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    box-sizing: content-box;
+}
+
+.grades-student-EC .grade-student:last-of-type {
+    margin-bottom: 0px;
+}
+
+.grade-student label {
+    max-width: 210px;
+    flex: 70 1 0;
+}
+
+#capacity-assessment-1,
+#capacity-assessment-2,
+#capacity-assessment-3,
+#capacity-assessment-4,
+#nota-promedio {
+
+    font-family: 'DS-Digital', monospace;
+    font-size: 1.2rem;
+    text-align: center;
+
+    color: var(--color-secondary-brillant);
+    background-color: var(--color-dark);
+
+    padding: 2px 3px;
+    border-radius: 8px;
+
+    max-width: 65px;
+    flex: 20 1 0;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    transition: outline 0.1s ease;
+}
+
+    #capacity-assessment-1:focus,
+    #capacity-assessment-2:focus,
+    #capacity-assessment-3:focus,
+    #capacity-assessment-4:focus {
+        /* 🔥 efecto LED elegante */
+        text-shadow:
+            0 0 2px var(--color-secondary-brillant),
+            0 0 5px var(--color-secondary-brillant),
+            0 0 10px var(--color-secondary);
+
+        /* profundidad */
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+    }
+
+    input.is-filled {
+        text-shadow:
+            0 0 2px var(--color-secondary-brillant),
+            0 0 5px var(--color-secondary-brillant),
+            0 0 10px var(--color-secondary);
+
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+    }
+
+.nota-minima,
+.nota-minima--example {
+    font-family: 'DS-Digital', monospace;
+    font-size: 1.2rem;
+    text-align: center;
+
+    color: var(--color-accent-ligth100);
+    background-color: var(--color-accent-dark);
+
+    padding: 2px 3px;
+    border: none;
+    border-radius: 8px;
+
+    max-width: 65px;
+    flex: 20 1 0;
+
+    transition: all 0.2s ease;
+
+    text-shadow:
+        0 0 2px var(--color-accent-ligth),
+        0 0 5px var(--color-accent-ligth),
+        0 0 10px var(--color-accent-ligth);
+
+    /* profundidad */
+    box-shadow:
+        inset 0 0 10px #000,
+        0 5px 15px rgba(0,0,0,0.6);
+}
+
+#clean-grade-EC {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+
+    background-color: var(--color-secondary-brillant);
+    color: var(--color-dark);
+    margin: 15px auto;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.grades-student-ExaTA {
+    background: var(--color-dark-bb);
+    border: 3px solid var(--color-secondary);
+    border-radius: 35px;
+    box-shadow: 7px 7px 21px 7px #0005;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.grades-student-ExaTA legend{
+    margin: auto;
+    padding: 0 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-wrap: balance;
+}
+
+.grades-student-ExaTA p{
+    margin: 0 35px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.field-group {
+    width: 80%;
+    margin-top: 10px;
+
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    padding: 8px 16px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    box-sizing: content-box;
+}
+
+.field-group label {
+    max-width: 210px;
+    flex: 70 1 0;
+}
+
+#ExamenParcial,
+#ExamenFinal,
+#TrabajoAplicativo {
+
+    font-family: 'DS-Digital', monospace;
+    font-size: 1.2rem;
+    text-align: center;
+
+    color: var(--color-secondary-brillant);
+    background-color: var(--color-dark);
+
+    padding: 2px 3px;
+    border-radius: 8px;
+
+    max-width: 65px;
+    flex: 20 1 0;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+    #capacity-assessment-1:focus,
+    #capacity-assessment-2:focus,
+    #capacity-assessment-3:focus,
+    #capacity-assessment-4:focus {
+        /* 🔥 efecto LED elegante */
+        text-shadow:
+            0 0 2px var(--color-secondary-brillant),
+            0 0 5px var(--color-secondary-brillant),
+            0 0 10px var(--color-secondary);
+
+        /* profundidad */
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+    }
+
+    input.is-filled {
+        text-shadow:
+            0 0 2px var(--color-secondary-brillant),
+            0 0 5px var(--color-secondary-brillant),
+            0 0 10px var(--color-secondary);
+
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+    }
+
+#clean-grade-ExaTA {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+
+    background-color: var(--color-secondary-brillant);
+    color: var(--color-dark);
+    margin: 15px auto;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.result {
+    max-width: 450px;
+    height: fit-content;
+    background-color: var(--color-accent);
+    box-shadow: 7px 7px 21px 7px #0005;
+    border: 3px solid var(--color-secondary);
+    border-radius: 35px;
+}
+
+.result__output {
+    padding: 7px 25px;
+    margin-top: 20px;
+    border-radius: 25px;
+    color: var(--color-accent-ligth100);
+    background-color: var(--color-primary);
+    font-family: "DS-Digital", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    flex: 1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.result__nota {
+    color: #181848;
+    margin: 13px 25px;
+}
+
+.nota-minima--example,
+#nota-promedio {
+    padding: 2px 15px;
+}
+
+#nota-promedio {
+    min-width: min-content;
+    font-size: 1.5rem;
+}
+
+.nota-aprobado {
+    display: inline-block;
+
+    text-shadow:
+            0 0 2px #0f0,
+            0 0 5px #0f0,
+            0 0 10px #0f0;
+
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+}
+
+.nota-desaprobado {
+    display: inline-block;
+
+    text-shadow:
+            0 0 2px #f00,
+            0 0 5px #f00,
+            0 0 10px #f00;
+
+        box-shadow:
+            inset 0 0 10px #000,
+            0 5px 15px rgba(0,0,0,0.6);
+}
+
+.hover-blink {
+    letter-spacing: 2px;
+    border: none;
+}
+
+data {
+    letter-spacing: 2px;
+}
+
+.hover-blink:hover {
+    outline: 2px solid var(--color-secondary-brillant);
+}
+
+/* Ocultar flechas en todos tus campos de notas */
+#ExamenParcial::-webkit-inner-spin-button,
+#ExamenFinal::-webkit-inner-spin-button,
+#TrabajoAplicativo::-webkit-inner-spin-button,
+[id^="capacity-assessment"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Cuando el formulario es lo suficientemente ancho para 2 columnas */
+@container formulario (min-width: 940px) {
+    .result {
+        grid-column: 1 / span 2; /* El área de 2x1 que pediste */
+        /*background-color: rgba(48, 72, 120, 0.5);*/
+    }
+}
+
+@container main (min-width: 940px) {
+    .form-promedio {
+        margin-bottom: 100px;
+        row-gap: 70px;
+    }
+}
+
+
+
+
+

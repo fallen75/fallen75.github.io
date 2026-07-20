@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-bg: #000000;
+    --color-primary: #304878;
+    --color-secondary: #7890a8;
+    --color-secondary2: #627588;
+    --color-secondary-brillant: #b7dbff;
+    --color-dark: #181848;
+    --color-accent: #f0a818;
+    --color-accent-ligth: #ffce6d;
+    --color-accent-ligth100: #ffefce;
+    --color-accent-dark: #4a3308;
+    --color-aux: #0b8185;
+    --color-aux1: #1f5f61;
+
+    --color-dark-bb: #181848bb;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+.schedule-container {
+    min-width: 1280px;      /* Ya lo tenías, mantenlo, es vital para Flexbox */
+    margin: 80px 20px 20px 20px;
+    color: #ddd;    
+    background-color: #202021; /* #202021*/
+    border: 1px solid transparent;
+
+    flex: 0 1 1400px;
+    display: flex;
+    flex-direction: column;
+
+    container-type: inline-size;
+    container-name: main;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+
+.grid-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-header > div.corner {
+    max-width: 80px;
+    border-radius: 20px 0 0 0;
+    flex: 0 0 80px;
+}
+
+.grid-header > div {
+    padding: 5px 0;
+    background-color: #293d65;
+    border: 1px solid #6275886f;
+    text-align: center;
+    flex: 1;
+}
+
+.grid-header > div:last-of-type {
+    border-radius: 0 20px 0 0;
+}
+
+.schedule-grid-body {
+    max-height: 831px;
+    background-color: #1e283d;
+    border-radius: 0 0 20px 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 80px repeat(6, minmax(180px, 1fr));
+}
+
+.grid-body__corner{
+    border-radius: 0 0 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-grid-body > div{
+    font-size: 1rem;
+    position: relative;
+    border: 1px solid #6275886f;
+}
+
+.grid-body__corner > div {
+    min-height: 36px;
+    text-align: center;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.day {
+    position: relative; /* Indispensable para que el 'top: 0' de la card sea el inicio del día */
+    height: 100%; /* Asegura que ocupe todo el alto del grid */
+}
+
+.monday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.monday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+/*.monday > div:last-of-type {
+    flex: 2;
+}*/
+
+.tuesday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.tuesday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.wednesday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.wednesday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.thursday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.thursday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.friday {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.friday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.saturday {
+    border-radius: 0 0 20px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.saturday > div {
+    min-height: 36px;
+    border-bottom: 1px solid #6275882f;
+    flex: 1;
+}
+
+.saturday > div:last-of-type {
+    border-radius: 0 0 20px 0;
+}
+
+.sidebar-right {
+    min-width: 350px;
+    height: calc(100vh - 100px); /* Ajusta el 100 para compensar el margen superior */
+    padding: 18px 25px;
+    margin: 80px 20px 20px 0px;
+    border-radius: 20px;
+    color: #ddd;
+    background-color: var(--color-secondary2); /* #202021*/
+    overflow-y: hidden;
+
+    flex: 1;
+    display: flex;         /* Convertimos en flex para organizar hijos */
+    flex-direction: column; /* Título arriba, lista abajo */
+
+    container-type: inline-size;
+    container-name: main;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar-header > h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+
+.btn-add-plus {
+    padding: 5px 12px;
+    margin-right: 10px;
+    background-color: #0b8185;
+    color: #eee;
+    border: none; 
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.sidebar-right > .sidebar__divider {
+    margin-bottom: 10px;
+}
+
+#lista-cursos {
+    /* Calculamos el alto: 100% del padre menos el espacio del título y el divider */
+    max-height: calc(100vh - 96px); 
+    overflow-y: auto; /* Muestra el scroll solo cuando es necesario */
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px; /* Espacio para que el scroll no tape los botones */
+}
+
+/* Personalización opcional del scrollbar para que combine con tu diseño oscuro */
+#lista-cursos::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lista-cursos::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+}
+
+#lista-cursos::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.curso {
+    padding: 10px 30px;
+    border-radius: 35px;
+    margin-bottom: 10px;
+    background-color: #304878bb;
+    display: flex;
+    flex-direction: column;
+}
+
+.curso:first-of-type {
+    margin-top: 10px;
+}
+
+.curso__title {
+    font-size: 1.3rem;
+}
+
+.curso__teachingAndClassroom {
+    margin-top: 10px;
+}
+
+.curso__schedule {
+    margin-bottom: 5px;
+}
+
+.curso_buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-view, .btn-delete {
+    width: 90px;
+    padding: 2px 10px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-view {
+    background-color: #0b818580;
+    color: #eee;
+}
+
+.btn-delete {
+    background-color: #f008;
+    color: #eee;
+}
+
+/* CURSO CARD ========================================*/
+
+.cursoCard {
+    width: 94%; /* Ocupa todo el ancho de la columna */
+    padding: 5px 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: var(--color-aux); /* O un color dinámico */
+    border-radius: 12px;
+    box-sizing: border-box; /* Para que el padding no desborde el 100% de ancho */
+    font-size: 1rem;
+    position: absolute;
+    left: 3%;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cursoCard > .cursoCard__title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cursoCard > .sidebar__divider {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    overflow-y: auto;
+}
+
+/* MODAL ========================================*/
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100vh; 
+    background: rgba(0,0,0,0.5); 
+}
+
+.modal-content { 
+    background: white; 
+    padding: 30px; 
+    width: 380px; 
+    border-radius: 15px; 
+}
+
+.modal-content__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal > i.fa-x {
+    padding: 8px 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.861);
+    color: #fff;
+    cursor: pointer; 
+}
+
+.row { 
+    display: flex; 
+    gap: 10px; 
+}
+
+input, select { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 8px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+}
+
+.btn-submit { 
+    width: 100%; 
+    padding: 12px; 
+    background: #27ae60; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 1.2rem;
+    font-weight: bold; 
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+
+
+

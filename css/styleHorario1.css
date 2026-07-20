@@ -1,0 +1,58 @@
+/*:root {
+    --hour-height: 60px;
+    --primary-blue: #3498db;
+    --danger-red: #e74c3c;
+}
+
+.time-label {
+    grid-column: 1;
+    text-align: center; color: #7f8c8d; font-size: 0.75rem;
+    height: var(--hour-height); display: flex; align-items: flex-start;
+    justify-content: center; padding-top: 5px; border-right: 1px solid #eee;
+}*/
+
+/*Bloque de cursos
+.curso-block {
+    grid-column: var(--col);
+    grid-row-start: var(--start);
+    grid-row-end: var(--end);
+    color: white;
+    margin: 2px 4px; padding: 8px; border-radius: 6px;
+    font-size: 0.75rem; z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid rgba(0,0,0,0.2);
+    overflow: hidden;
+}*/
+
+/* COLORES POR CURSO (SEGÚN TU SOLICITUD) 
+.color-series { background-color: #9b59b6 !important; } 
+.color-realidad { background-color: #27ae60 !important; } 
+.color-operativa { background-color: #f39c12 !important; } 
+.color-economia { background-color: #8e44ad !important; } 
+.color-sistemas { background-color: #16a085 !important; } 
+.color-inteligencia { background-color: #34495e !important; } 
+.color-taller { background-color: #d35400 !important; } */
+
+/* CURSO NUEVO (AZUL) 
+.curso-nuevo { background-color: #3498db !important; }*/
+
+/* COLISIÓN (ROJO - PRIORIDAD MÁXIMA) 
+.curso-block.colision {
+    background-color: rgba(231, 76, 60, 0.9) !important;
+    border: 2px solid #c0392b !important;
+    border-left: 5px solid #922b21 !important;
+    z-index: 30 !important;
+}*/
+
+
+
+
+
+/*.curso-item { 
+    background: #f9f9f9; 
+    border: 1px solid #eee; 
+    padding: 12px; 
+    border-radius: 10px; 
+    margin-bottom: 12px; 
+}*/
+
