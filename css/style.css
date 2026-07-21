@@ -144,7 +144,7 @@ html, body {
     left: 0;
     overflow-y: auto; /* <--- CLAVE: Si el contenido crece, aparece scroll interno */
     /*flex-shrink: 0;    Evita que el sidebar se aplaste cuando el main crezca */
-    z-index: 80;        /* Lo pone por encima del párrafo */
+    z-index: 500;        /* Lo pone por encima del párrafo */
 
     background-color: #1f5f61;
     color: #eee;
@@ -154,7 +154,8 @@ html, body {
     max-width: 300px;
     min-width: 270px;
     flex: 1; /* Estructura: clamp(mínimo, ideal, máximo) */
-    overflow: hidden; /* Evita que el texto se salga al encogerse */
+    overflow-y: auto; /* 💡 Mantiene el scroll si los ítems no caben */
+    overflow-x: hidden; /* Evita scrolls horizontales no deseados */
 }
 
 .sidebar-overlay {
@@ -349,8 +350,6 @@ html, body {
     container-name: main;
 }
 
-
-
 .is-collapsed{
     display: none;
 }
@@ -359,6 +358,40 @@ html, body {
     background-color: #f00;
 }
 
+/*  Responsive para moviles ===================================================================*/
+
+@media (max-width:480px){
+    .header {
+        padding: 0 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100dvh;      /* O 100dvh para móviles */
+        width: 270px;       /* Ancho fijo para evitar comportamientos extraños */
+        
+        overflow-y: auto;   /* Permite scroll SOLO DENTRO del sidebar si los ítems son muchos */
+    }
+
+    .header__search-bar{
+        display:none;
+    }
+
+    .header__container-perfil {
+        flex: 0;
+    }
+
+    .logo-link{
+        font-size:1.5rem;
+    }
+
+    
 
 
-
+}
