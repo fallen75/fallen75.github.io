@@ -363,7 +363,7 @@ html, body {
 @media (max-width:480px){
 
     *{
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     img {
@@ -397,11 +397,25 @@ html, body {
         overflow-y: auto;   /* Permite scroll SOLO DENTRO del sidebar si los ítems son muchos */
     }
 
+    .sidebar-overlay.is-active {
+        opacity: 1;
+        pointer-events: auto; /* Bloquea las interacciones con el fondo */
+    }
+
     .logo-link{
         font-size:1.5rem;
     }
 
     /* Para el SideBar ====================================================*/
+    .container-global.no-scroll {
+        overflow: hidden;
+    }
+
+    .main-content.no-scroll {
+        overflow: hidden;
+    }
+
+    /* CSS */
     body.no-scroll {
         overflow: hidden;
     }
@@ -420,10 +434,6 @@ html, body {
         transition: opacity 0.3s ease;
     }
 
-    .sidebar-overlay.active {
-        opacity: 1;
-        pointer-events: auto; /* Bloquea las interacciones con el fondo */
-    }
 
     .sidebar {
         position: fixed;
@@ -432,13 +442,12 @@ html, body {
         left: 0;
         width: 250px;
         height: 100vh;
-        background-color: #ffffff;
         z-index: 100; /* Por encima del overlay */
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         
         /* Se oculta fuera de la pantalla por la izquierda */
-        transform: translateX(-100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
     }
 
     /* Estado activo del Sidebar (se desliza hacia adentro) */
