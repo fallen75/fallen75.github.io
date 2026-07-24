@@ -94,6 +94,15 @@
         border-radius: 11px;
     }
 
+    .result__nota {
+        text-align: center;
+    }
+
+    data.nota-minima--example {
+        display: inline-block;
+        min-width: 52px;
+    }
+
     /* Para abreviar los label ================================== */
 
     .text-desktop {
@@ -102,5 +111,5 @@
 
     .text-mobile {
         display: inline; /* Muestra la versión corta */
-    }
+    }    
 }
