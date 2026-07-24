@@ -1,0 +1,78 @@
+@media (max-width:480px){
+
+    .form-promedio {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap; /* Cambiado de row (default) a column para el contenido */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    } 
+
+    .grades-student-EC legend {
+        padding: 0 5px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .grades-student-EC p {
+        margin: 0 10px;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+
+    .grade-student {
+        width: 93%;
+        box-sizing: border-box;
+        border-radius: 25px;
+        padding: 8px 16px;
+        gap: 7px;
+    }
+
+    .grade-student label {
+        font-size: 0.95rem;
+        text-wrap: balance;
+        text-align: center;
+    }
+
+    #capacity-assessment-1,
+    #capacity-assessment-2,
+    #capacity-assessment-3,
+    #capacity-assessment-4,
+    #nota-promedio {
+
+        padding: 3px 3px;
+        border-radius: 11px;
+    }
+
+    .nota-minima,
+    .nota-minima--example {
+
+        padding: 3px 3px;
+        border-radius: 11px;
+    }
+
+    .grades-student-ExaTA legend{
+        font-size: 1.2rem;
+    }
+
+    .grades-student-ExaTA p{
+        margin: 0 15px;
+        margin-top: 10px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .field-group {
+        width: 93%;
+        box-sizing: border-box;
+        padding: 8px 16px;
+    }
+
+
+
+
+}

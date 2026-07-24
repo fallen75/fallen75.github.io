@@ -362,10 +362,6 @@ html, body {
 
 @media (max-width:480px){
 
-    *{
-        overflow-x: hidden;
-    }
-
     img {
         max-width: 100%;
         display: block;
@@ -394,7 +390,7 @@ html, body {
         height: 100dvh;      /* O 100dvh para móviles */
         width: 270px;       /* Ancho fijo para evitar comportamientos extraños */
         
-        overflow-y: auto;   /* Permite scroll SOLO DENTRO del sidebar si los ítems son muchos */
+        overflow-y: scroll;   /* Permite scroll SOLO DENTRO del sidebar si los ítems son muchos */
     }
 
     .sidebar-overlay.is-active {
@@ -405,6 +401,16 @@ html, body {
     .logo-link{
         font-size:1.5rem;
     }
+
+    /*  Para el contenido principal ====================================================*/
+
+    .main-content{
+        overflow-x: hidden;
+        max-width: 100%;       /* Asegura que intente llenar el espacio */ 
+        padding: 80px 10px 20px 10px;  /*Un poco de respiro para el contenido */
+    }
+
+
 
     /* Para el SideBar ====================================================*/
     .container-global.no-scroll {
