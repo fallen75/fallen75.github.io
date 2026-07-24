@@ -1,3 +1,11 @@
+.text-mobile {
+  display: none; /* Oculta la versión corta */
+}
+
+.text-desktop {
+  display: inline; /* Muestra la versión larga */
+}
+
 @media (max-width:480px){
 
     .form-promedio {
@@ -28,7 +36,7 @@
         width: 93%;
         box-sizing: border-box;
         border-radius: 25px;
-        padding: 8px 16px;
+        padding: 5px 8px;
         gap: 7px;
     }
 
@@ -43,14 +51,14 @@
     #capacity-assessment-3,
     #capacity-assessment-4,
     #nota-promedio {
-
+        min-width: 62px;
         padding: 3px 3px;
         border-radius: 11px;
     }
 
     .nota-minima,
     .nota-minima--example {
-
+        min-width: 62px;
         padding: 3px 3px;
         border-radius: 11px;
     }
@@ -64,15 +72,35 @@
         margin-top: 10px;
         font-size: 1rem;
         text-align: center;
+        text-wrap: pretty;
     }
 
     .field-group {
         width: 93%;
         box-sizing: border-box;
-        padding: 8px 16px;
+        padding: 5px 8px;
     }
 
+    .field-group label {
+        font-size: 0.95rem;
+        text-align: center;
+    }
 
+    #ExamenParcial,
+    #ExamenFinal,
+    #TrabajoAplicativo { 
+        min-width: 62px;
+        padding: 3px 3px;
+        border-radius: 11px;
+    }
 
+    /* Para abreviar los label ================================== */
 
+    .text-desktop {
+        display: none; /* Oculta la versión larga */
+    }
+
+    .text-mobile {
+        display: inline; /* Muestra la versión corta */
+    }
 }
