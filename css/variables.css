@@ -1,4 +1,6 @@
 :root {
+    --Tcolor-backgroundmain: #202021;
+
     --color-bg: #000000;
     --color-primary: #304878;
     --color-secondary: #7890a8;
@@ -11,9 +13,30 @@
     --color-accent-dark: #4a3308;
     --color-aux: #0b8185;
     --color-aux1: #1f5f61;
+    --color-aux2: #00bab7;
+
+    --color-dark-bb: #181848bb;
+}
+
+[data-theme="light"]{
+    --Tcolor-backgroundmain: #dedef5;
+
+    --color-bg: #000000;
+    --color-primary: #9eadcc;
+    --color-secondary: #7890a8;
+    --color-secondary2: #627588;
+    --color-secondary-brillant: #b7dbff;
+    --color-dark: #5e5ee0;
+    --color-accent: #f0a818;
+    --color-accent-ligth: #ffce6d;
+    --color-accent-ligth100: #ffefce;
+    --color-accent-dark: #4a3308;
+    --color-aux: #0fa1a7;
+    --color-aux1: #1f5f61;
     --color-aux2: #029b99;
 
     --color-dark-bb: #181848bb;
+
 }
 
 

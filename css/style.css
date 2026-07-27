@@ -128,7 +128,7 @@ html, body {
     left: 0;
     overflow-y: auto; /* <--- CLAVE: Si el contenido crece, aparece scroll interno */
     /*flex-shrink: 0;    Evita que el sidebar se aplaste cuando el main crezca */
-    z-index: 500;        /* Lo pone por encima del párrafo */
+    z-index: 100;        /* Lo pone por encima del párrafo */
 
     background-color: #1f5f61;
     color: #eee;
@@ -323,7 +323,7 @@ html, body {
     width: 100%;       /* Asegura que intente llenar el espacio */ 
     padding: 80px 50px 20px 50px; /* Un poco de respiro para el contenido */
     color: #ddd;
-    background-color: #202021;
+    background-color: var(--Tcolor-backgroundmain);
 
     flex: 1;
     
@@ -334,6 +334,38 @@ html, body {
 
     container-type: inline-size;
     container-name: main;
+}
+
+.theme-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    
+    transition: all 0.7s;
+}
+
+.theme-button:hover {
+    background-color: var(--color-dark);
+    transition: all 0.4s;
+}
+
+.theme-button>i {
+    font-size: 2rem;
+    color: var(--color-secondary-brillant);
+    transition: all 0.7s;
+}
+
+.theme-button>i:hover {
+    color: var(--color-aux2);
+    transition: all 0.4s;
 }
 
 .is-collapsed{
