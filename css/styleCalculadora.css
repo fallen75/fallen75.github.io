@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Digital+Numbers&display=swap');
 @import url('https://fonts.cdnfonts.com/css/ds-digital');
 
-:root {
-    --color-bg: #000000;
-    --color-primary: #304878;
-    --color-secondary: #7890a8;
-    --color-secondary-brillant: #b7dbff;
-    --color-dark: #181848;
-    --color-accent: #f0a818;
-    --color-accent-ligth: #ffce6d;
-    --color-accent-ligth100: #ffefce;
-    --color-accent-dark: #4a3308;
-
-    --color-dark-bb: #181848bb;
-}
-
 .form-promedio {
     width: 100%;
     max-width: 1280px;
