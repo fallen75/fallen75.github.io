@@ -33,7 +33,7 @@ li {
 }
 
 .cover-letter__header h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 7vw, 4.5rem);
 }
 
 .cover-letter > .sidebar__divider {
@@ -119,10 +119,6 @@ li {
         max-width: 88px;
     }
 
-    .cover-letter__header h1 {
-        font-size: 3rem;
-    }
-
     .contact-menu__list-item > a{
         width: 90%;
         padding: 7px 5vw;
@@ -141,9 +137,6 @@ li {
         max-width: 58px;
     }
 
-    .cover-letter__header h1 {
-        font-size: 2rem;
-    }
 
     .contact-menu__list-item > a{
         width: 90%;
